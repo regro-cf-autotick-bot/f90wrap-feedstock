@@ -1,14 +1,13 @@
-{% set version = "0.1.0" %}
-{% set commit = "b19b2650838402ffef5cc32bb1c3ce4f820da4f8" %}
+{% set version = "0.1.4" %}
 
 package:
     name: f90wrap
     version: {{ version }}
 
 source:
-    fn: f90wrap-{{ commit }}.tar.gz
-    url: https://github.com/jameskermode/f90wrap/archive/{{ commit }}.tar.gz
-    sha256: 65bfaf2c3862827c70ed69be96e0d7dbc6793a650a1939d0c0a04255ec1b38e2
+    fn: f90wrap-{{ version }}.tar.gz
+    url: https://github.com/jameskermode/f90wrap/archive/v{{ version }}.tar.gz
+    sha256: af86d60c06e74b688a5142afa9ebe69581ac7c7e912a0e535f6ebdd98b13d6c9
 
 build:
     number: 0
