@@ -6,7 +6,7 @@ package:
 
 source:
     fn: f90wrap-{{ version }}.tar.gz
-    url: https://github.com/jameskermode/f90wrap/releases/tag/v{{ version }}
+    url: https://github.com/jameskermode/f90wrap/archive/v{{ version }}.tar.gz
     sha256: 688e5d1f9e8a7c61e3a4529aa8d54fac941a5425
 
 build:
