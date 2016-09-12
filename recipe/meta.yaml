@@ -11,8 +11,9 @@ source:
 
 build:
     number: 0
-    skip: True  # [win or osx]
+    skip: True  # [win]
     script:
+        - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
         - python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -33,11 +34,13 @@ test:
     commands:
         - f90wrap -h
         - f2py-f90wrap -h
+        - conda inspect linkages -n _test f90wrap  # [not win]
+        - conda inspect objects -n _test f90wrap  # [osx]
 
 about:
     home: https://github.com/jameskermode/f90wrap
     license: GPL-2.0
-    summary: Fortran to Python interface generator with derived type support
+    summary: 'Fortran to Python interface generator with derived type support.'
 
 extra:
     recipe-maintainers:
