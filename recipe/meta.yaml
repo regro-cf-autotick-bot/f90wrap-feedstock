@@ -1,48 +1,48 @@
 {% set version = "0.1.4" %}
 
 package:
-    name: f90wrap
-    version: {{ version }}
+  name: f90wrap
+  version: {{ version }}
 
 source:
-    fn: f90wrap-{{ version }}.tar.gz
-    url: https://github.com/jameskermode/f90wrap/archive/v{{ version }}.tar.gz
-    sha256: af86d60c06e74b688a5142afa9ebe69581ac7c7e912a0e535f6ebdd98b13d6c9
+  fn: f90wrap-{{ version }}.tar.gz
+  url: https://github.com/jameskermode/f90wrap/archive/v{{ version }}.tar.gz
+  sha256: af86d60c06e74b688a5142afa9ebe69581ac7c7e912a0e535f6ebdd98b13d6c9
 
 build:
-    number: 0
-    skip: True  # [win]
-    script:
-        - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
-        - python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  skip: True  # [win]
+  script:
+    - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
+    - python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
-    build:
-        - python
-        - setuptools
-        - numpy x.x
-        - gcc
-    run:
-        - python
-        - numpy x.x
-        - libgcc  # [linux]
-        - libgfortran  # [osx]
+  build:
+    - python
+    - setuptools
+    - numpy x.x
+    - gcc
+  run:
+    - python
+    - numpy x.x
+    - libgcc  # [linux]
+    - libgfortran  # [osx]
 
 test:
-    imports:
-        - f90wrap
-    commands:
-        - f90wrap -h
-        - f2py-f90wrap -h
-        - conda inspect linkages -n _test f90wrap  # [not win]
-        - conda inspect objects -n _test f90wrap  # [osx]
+  imports:
+    - f90wrap
+  commands:
+    - f90wrap -h
+    - f2py-f90wrap -h
+    #- conda inspect linkages -p $PREFIX f90wrap  # [not win]
+    #- conda inspect objects -p $PREFIX f90wrap  # [osx]
 
 about:
-    home: https://github.com/jameskermode/f90wrap
-    license: GPL-2.0
-    summary: 'Fortran to Python interface generator with derived type support.'
+  home: https://github.com/jameskermode/f90wrap
+  license: GPL-2.0
+  summary: 'Fortran to Python interface generator with derived type support.'
 
 extra:
-    recipe-maintainers:
-        - jameskermode
-        - ocefpaf
+  recipe-maintainers:
+    - jameskermode
+    - ocefpaf
