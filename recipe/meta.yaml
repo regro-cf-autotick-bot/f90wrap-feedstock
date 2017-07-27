@@ -10,7 +10,7 @@ source:
   sha256: af86d60c06e74b688a5142afa9ebe69581ac7c7e912a0e535f6ebdd98b13d6c9
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
   script:
     - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
@@ -20,11 +20,13 @@ requirements:
   build:
     - python
     - setuptools
-    - numpy x.x
-    - gcc
+    - numpy 1.7.*  # [py27]
+    - numpy 1.8.*  # [py35 or py36]
+    - gcc  # [not win]
   run:
     - python
-    - numpy x.x
+    - numpy >=1.7  # [py27]
+    - numpy >=1.8  # [py35 or py36]
     - libgcc  # [linux]
     - libgfortran  # [osx]
 
@@ -34,12 +36,13 @@ test:
   commands:
     - f90wrap -h
     - f2py-f90wrap -h
-    #- conda inspect linkages -p $PREFIX f90wrap  # [not win]
-    #- conda inspect objects -p $PREFIX f90wrap  # [osx]
+    - conda inspect linkages -p $PREFIX f90wrap  # [not win]
+    - conda inspect objects -p $PREFIX f90wrap  # [osx]
 
 about:
   home: https://github.com/jameskermode/f90wrap
   license: GPL-2.0
+  license_file: LICENSE.txt
   summary: 'Fortran to Python interface generator with derived type support.'
 
 extra:
