@@ -1,4 +1,4 @@
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 package:
   name: f90wrap
@@ -7,10 +7,10 @@ package:
 source:
   fn: f90wrap-{{ version }}.tar.gz
   url: https://github.com/jameskermode/f90wrap/archive/v{{ version }}.tar.gz
-  sha256: af86d60c06e74b688a5142afa9ebe69581ac7c7e912a0e535f6ebdd98b13d6c9
+  sha256: d78125c1679d68f500f83c9ece8cd3c0eeda7d1f1490c3a16a1392e0ed8b298b
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win]
   script:
     - export LDFLAGS="-undefined dynamic_lookup -bundle"  # [osx]
