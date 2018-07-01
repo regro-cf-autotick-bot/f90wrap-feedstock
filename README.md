@@ -14,14 +14,16 @@ Summary: Fortran to Python interface generator with derived type support.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/f90wrap-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/f90wrap-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/f90wrap-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/f90wrap-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/f90wrap-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/f90wrap-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/f90wrap-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/f90wrap-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/f90wrap/badges/version.svg)](https://anaconda.org/conda-forge/f90wrap)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/f90wrap/badges/downloads.svg)](https://anaconda.org/conda-forge/f90wrap)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-f90wrap-green.svg)](https://anaconda.org/conda-forge/f90wrap) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/f90wrap.svg)](https://anaconda.org/conda-forge/f90wrap) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/f90wrap.svg)](https://anaconda.org/conda-forge/f90wrap) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/f90wrap.svg)](https://anaconda.org/conda-forge/f90wrap) |
 
 Installing f90wrap
 ==================
