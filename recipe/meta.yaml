@@ -1,4 +1,4 @@
-{% set version = "0.1.5" %}
+{% set version = "0.2.1" %}
 
 package:
   name: f90wrap
@@ -7,7 +7,7 @@ package:
 source:
   fn: f90wrap-{{ version }}.tar.gz
   url: https://github.com/jameskermode/f90wrap/archive/v{{ version }}.tar.gz
-  sha256: d78125c1679d68f500f83c9ece8cd3c0eeda7d1f1490c3a16a1392e0ed8b298b
+  sha256: 26e29c8870bd556fb56f28593485dedd02723fe9ae0ea78c9f6c924796cff602
 
 build:
   number: 0
